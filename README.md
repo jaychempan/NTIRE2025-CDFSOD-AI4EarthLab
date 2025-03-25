@@ -1,5 +1,11 @@
 # NTIRE2025-CDFSOD-AI4EarthLab
 
+### Introduction
+Foundation models pretrained on large-scale datasets, such as GroundingDINO and LAE-DINO, have demonstrated strong detection performance in cross-domain zero-shot and few-shot object detection tasks. Through extensive few-shot training, we observed that leveraging image-based data augmentation and optimal domain search strategies can further enhance the performance of these foundation models. Based on open-source GroundingDINO, we combined several commonly used image augmentation techniques and defined optimization objectives to efficiently search for the best sub-domains within a wide domain space, thereby enabling effective few-shot object detection.
+<p align="center">
+    <img src="assets/pipeline.png" alt="Image" width="700">
+</p>
+
 ### Installation Environment
 
 The experimental environment is based on [mmdetection](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md), the installation environment reference mmdetection's [installation guide](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md).
@@ -104,3 +110,5 @@ bash tools/dist_test_out.sh ../configs/10-shot-dataset3.py ../weights/10-shot-da
 python ../pkl2coco.py --coco_file ../data/dataset3/annotations/test.json --pkl_file ../pkls/dataset3_10shot.pkl --output_json ../pkls/dataset3_10shot_coco.json --annotations_json ../submit/dataset3_10shot.json
 ```
 
+### Acknowledgement
+Thansk to the [MM-Grounding-DINO](https://github.com/open-mmlab/mmdetection/blob/main/configs/mm_grounding_dino/README.md) Project.
