@@ -6,7 +6,7 @@ The experimental environment is based on [mmdetection](https://github.com/open-m
 ```
 conda create --name lae python=3.8 -y
 conda activate lae
-cd LAE-DINO/mmdetection_lae
+cd ./mmdetection_lae
 pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 pip install -U openmim
 mim install mmengine
@@ -42,7 +42,7 @@ huggingface-cli download --resume-download google-bert/bert-base-uncased --local
 
 ### Get weights
 Download the checkpoint files to dir `./weights`.
-> Baidu Disk: [[link]]()
+> Baidu Disk: [[link]](https://pan.baidu.com/s/1r_xR4F6eLq5pXocgZc8-Ww?pwd=mpnc)
 
 ### Train GroundingDINO Model
 50 groups of experiments were carried out on the 8-card A100, a total of 50*8 groups of experiments.
