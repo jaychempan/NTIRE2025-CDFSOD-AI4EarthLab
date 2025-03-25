@@ -1,12 +1,12 @@
 # NTIRE2025-CDFSOD-AI4EarthLab
 
-### Introduction
+## Introduction
 Foundation models pretrained on large-scale datasets, such as GroundingDINO and LAE-DINO, have demonstrated strong detection performance in cross-domain zero-shot and few-shot object detection tasks. Through extensive few-shot training, we observed that leveraging image-based data augmentation and optimal domain search strategies can further enhance the performance of these foundation models. Based on open-source GroundingDINO, we combined several commonly used image augmentation techniques and defined optimization objectives to efficiently search for the best sub-domains within a wide domain space, thereby enabling effective few-shot object detection.
 <p align="center">
     <img src="assets/pipeline.png" alt="Image" width="700">
 </p>
 
-### Installation Environment
+## Installation Environment
 
 The experimental environment is based on [mmdetection](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md), the installation environment reference mmdetection's [installation guide](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md).
 ```
@@ -30,7 +30,7 @@ cd NTIRE2025-CDFSOD-AI4EarthLab/
 huggingface-cli download --resume-download google-bert/bert-base-uncased --local-dir weights/bert-base-uncased
 ```
 
-### Catalogue
+## Catalogue
 
 ```
 .
@@ -46,11 +46,11 @@ huggingface-cli download --resume-download google-bert/bert-base-uncased --local
 └── weights
 ```
 
-### Get weights
+## Get weights
 Download the checkpoint files to dir `./weights`.
 > Baidu Disk: [[link]](https://pan.baidu.com/s/1r_xR4F6eLq5pXocgZc8-Ww?pwd=mpnc)
 
-### Train GroundingDINO Model
+## Train GroundingDINO Model
 50 groups of experiments were carried out on the 8-card A100, a total of 50*8 groups of experiments.
 ```
 cd ./mmdetection
@@ -58,7 +58,7 @@ cd ./mmdetection
 ./tools/dist_train_muti.sh configs/grounding_dino/CDFSOD/GroudingDINO-few-shot-SwinB.py "0,1,2,3,4,5,6,7" 50
 ```
 
-### Infer GroundingDINO Model
+## Infer GroundingDINO Model
 Save to `*.pkl` file and convert to submit `.json` format. Infer stage only need run on single card
 
 ```
