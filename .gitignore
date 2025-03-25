@@ -1,13 +1,10 @@
-build/
 *.egg-info/
 data/
 weights/
-work_dirs/
-output/
 mmdetection/work_dirs/
-commit/
-mmdetection/CDFSOD_PKL/
-mmdetection/CDFSOD_PKL_1/
+submit/
+submit_codalab/
+pkls/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

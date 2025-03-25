@@ -146,12 +146,12 @@ model = dict(
     #         ])),
 
 # 
-    # test_cfg=dict(max_per_img=300))
+    test_cfg=dict(max_per_img=300))
     # 1-shot: 降低 max_per_img 以减少误检
     # test_cfg=dict(max_per_img=80))
 
     # # 5-shot: 平衡召回率和误检率
-    test_cfg=dict(max_per_img=200))
+    # test_cfg=dict(max_per_img=200))
 
     # # 10-shot: 提高 max_per_img 以提高召回率
     # test_cfg=dict(max_per_img=300))
@@ -229,16 +229,17 @@ optim_wrapper = dict(
         'backbone': dict(lr_mult=0.1)
     }))
 # learning policy
-max_epochs = 25
+max_epochs = 25 #########通过之前收敛调整，尽量往小，加速实验迭代
 param_scheduler = [
     dict(
         type='MultiStepLR',
         begin=0,
         end=max_epochs,
         by_epoch=True,
-        milestones=[9],
+        milestones=[9], #########调整学习率的位置以适应不同数据集
         gamma=0.1)
 ]
+
 train_cfg = dict(max_epochs=max_epochs, type='EpochBasedTrainLoop', val_interval=1)
 
 default_hooks = dict(
